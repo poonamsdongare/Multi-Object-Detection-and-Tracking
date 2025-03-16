@@ -113,7 +113,9 @@ YOLOv5 was trained on the **MOT17 dataset**, detecting and classifying objects (
 For multi-object tracking, we use SORT (Simple Online and Realtime Tracker), a fast and efficient tracking algorithm that works with bounding box detections.
 
 #### Architecture of the SORT algorithm
-![Overview of the object tracking SORT algorithm.](https://www.researchgate.net/publication/358134782/figure/fig2/AS:1122681630011393@1644679567324/Overview-of-the-object-tracking-SORT-algorithm.png)[^1]
+
+
+![Overview of the object tracking SORT algorithm.](Overview-of-the-object-tracking-SORT-algorithm.png)[^1]
 
 #### How SORT Works:
 - **Detection Input:** Receives YOLOv5 detections (bounding boxes).
@@ -126,6 +128,33 @@ For multi-object tracking, we use SORT (Simple Online and Realtime Tracker), a f
 - No need for deep learning-based re-identification.
 - Effective for short-term tracking tasks.
 
+## Evaluation metric 
+### MOTA (Multiple Object Tracking Accuracy)
+**MOTA** is a popular evaluation metric used to assess the performance of multi-object tracking systems.
+It quantifies the accuracy of tracking by considering different types of errors, including false positives (FP), false negatives (FN), and identity switches (ID switch).
+
+- **False Positives:** These occur when the tracker falsely detects an object where there is none.
+- **False Negatives:** These occur when the tracker misses detecting an actual object.
+- **Identity Switches:** These happen when the tracker switches the identities of objects, leading to confusion in tracking.
+
+#### **Formula**:
+MOTA is calculated using the following formula:
+
+$\text{MOTA} = 1 - \frac{FP + FN + IDS}{GT}$
+Where:
+- \( FP \): False Positives (number of detections that do not correspond to any ground truth object)
+- \( FN \): False Negatives (number of ground truth objects that were not detected)
+- \( IDS \): Identity Switches (number of times a tracked object switches its identity during tracking)
+- \( GT \): Total number of ground truth objects (total number of objects in the dataset)
+
+In this project,we recieved a MOTA value of 0.56.
+
+## Future improvements 
+- **Integrating DeepSORT for Better Identity Association**
+While SORT is a fast and efficient tracker, it may struggle with identity switches and occlusions in complex scenes. Integrating DeepSORT, which uses deep learning for improved appearance feature extraction, could help maintain more accurate object identities across frames.
+
+
+## References
 [^1]: [Source: ResearchGate](https://www.researchgate.net/figure/Overview-of-the-object-tracking-SORT-algorithm_fig2_358134782)
 
 
