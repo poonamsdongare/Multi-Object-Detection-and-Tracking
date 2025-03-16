@@ -112,6 +112,9 @@ YOLOv5 was trained on the **MOT17 dataset**, detecting and classifying objects (
 ### Tracking Algorithm: SORT
 For multi-object tracking, we use SORT (Simple Online and Realtime Tracker), a fast and efficient tracking algorithm that works with bounding box detections.
 
+#### Architecture of the SORT algorithm
+![Overview of the object tracking SORT algorithm.](https://www.researchgate.net/publication/358134782/figure/fig2/AS:1122681630011393@1644679567324/Overview-of-the-object-tracking-SORT-algorithm.png)[^1]
+
 #### How SORT Works:
 - **Detection Input:** Receives YOLOv5 detections (bounding boxes).
 - **Kalman Filter Prediction:** Predicts the next position of each tracked object.
@@ -123,8 +126,6 @@ For multi-object tracking, we use SORT (Simple Online and Realtime Tracker), a f
 - No need for deep learning-based re-identification.
 - Effective for short-term tracking tasks.
 
-
-
-
+[^1]: [Source: ResearchGate](https://www.researchgate.net/figure/Overview-of-the-object-tracking-SORT-algorithm_fig2_358134782)
 
 
