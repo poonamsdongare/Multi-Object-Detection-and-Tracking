@@ -81,13 +81,6 @@ These provide multiple detection inputs to evaluate how different detectors affe
 
 ---
 
-## **Exploratory Data Analysis (EDA)**  
-In this section, we analyze the dataset to extract key insights:  
-- **Bounding box statistics** (size distribution, aspect ratios)  
-- **Object density per frame** (how many people are present in each frame)  
-- **Visibility analysis** (percentage of occluded objects)  
----
-
 ## **Model**  
 This project combines **YOLOv5** for object detection and **SORT (Simple Online and Realtime Tracker)** for multi-object tracking.  
 
