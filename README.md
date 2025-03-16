@@ -98,7 +98,7 @@ This project combines **YOLOv5** for object detection and **SORT (Simple Online 
 ### Object Detection Model: YOLOv5  
 This project utilizes **YOLOv5**, a state-of-the-art real-time object detection model. **YOLO (You Only Look Once)** is a deep-learning-based object detection framework that divides images into grids and predicts bounding boxes and class probabilities.
 
-#### Advantages of YOLO?
+#### Advantages of YOLO
 - **Fast inference speed** (~60 FPS on GPU).
 - **High accuracy** in real-time object detection.
 - **Anchor-free design**, making it more efficient for object tracking.
@@ -109,7 +109,19 @@ YOLOv5 was trained on the **MOT17 dataset**, detecting and classifying objects (
 - **Custom YAML configuration** specifying dataset paths and class names.
 - **Training using pre-trained weights (`yolov5s.pt`)**.
 
+### Tracking Algorithm: SORT
+For multi-object tracking, we use SORT (Simple Online and Realtime Tracker), a fast and efficient tracking algorithm that works with bounding box detections.
 
+#### How SORT Works:
+- **Detection Input:** Receives YOLOv5 detections (bounding boxes).
+- **Kalman Filter Prediction:** Predicts the next position of each tracked object.
+- **Hungarian Algorithm for Data Association:** Matches new detections with existing tracks.
+- **Track Management:** Assigns new IDs to objects and removes lost tracks.
+
+#### Advantages of SORT:
+- Lightweight and real-time (runs at high FPS).
+- No need for deep learning-based re-identification.
+- Effective for short-term tracking tasks.
 
 
 
