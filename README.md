@@ -152,6 +152,9 @@ In this project,we recieved a MOTA value of 0.56.
 ## Future improvements 
 - **Integrating DeepSORT for Better Identity Association**
 While SORT is a fast and efficient tracker, it may struggle with identity switches and occlusions in complex scenes. Integrating DeepSORT, which uses deep learning for improved appearance feature extraction, could help maintain more accurate object identities across frames.
+- **Switching to a Constant Acceleration Model for Kalman Filter**
+Currently, the Kalman filter in the project uses a constant velocity model to track the objects. However, in real-world scenarios, objects often undergo acceleration or deceleration. To improve the accuracy of tracking in such cases, we can switch to a constant acceleration model.
+In the constant acceleration model, the state vector is expanded to include position, velocity, and acceleration. This allows the Kalman filter to better predict the motion of objects that experience changes in speed, rather than assuming constant velocity. The state transition matrix and the process model will be updated to incorporate acceleration, providing more accurate predictions for object tracking in dynamic environments.
 
 
 ## References
