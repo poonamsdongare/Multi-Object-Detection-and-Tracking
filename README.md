@@ -1,5 +1,9 @@
 # Multi-Object-Detection-and-Tracking
 
+
+![Animation2](https://github.com/poonamsdongare/Multi-Object-Detection-and-Tracking/blob/main/Animation2.gif)
+
+
 ## **Introduction**  
 This project focuses on **multi-object detection and tracking** using the **MOT17 dataset**, a benchmark dataset for pedestrian tracking in real-world urban environments. 
 The goal is to train an object detection model based on **YOLO (You Only Look Once)** to detect and track pedestrians across multiple video sequences.  
